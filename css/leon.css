@@ -42,6 +42,34 @@ body {
   }
 }
 /* End of Global Rules */
+/* special heading */
+
+.special-heading {
+  margin: 0;
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800;
+  color: rgb(226, 226, 226);
+  letter-spacing: -5px;
+}
+.special-heading + p {
+  text-align: center;
+  color: rgb(120 120 120);
+  font-size: 20px;
+  margin-top: -28px;
+  margin-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+  }
+  .special-heading + p {
+    font-size: 14px;
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+}
+/* end special heading */
 
 /* Header Styleing */
 .header .container {
@@ -203,6 +231,7 @@ start services section
   width: 320px;
   position: relative;
   z-index: 1;
+  border-radius: 16px 0 0 16px;
 }
 @media (max-width: 990px) {
   .image-hide {
@@ -228,31 +257,193 @@ end services section
 
 */
 
-/* special heading */
+/*
 
-.special-heading {
+start of portfolio section 
+
+*/
+
+.portfolio {
+  padding: var(--section-padding) 0;
+  background-color: var(--secondary-color);
+}
+.portfolio .portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.portfolio .portfolio-content .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.portfolio .card .card-text {
+  background-color: white;
+  padding: 20px;
+}
+.portfolio .card .card-text h3 {
   margin: 0;
-  font-size: 100px;
-  text-align: center;
   font-weight: 800;
-  color: rgb(226, 226, 226);
-  letter-spacing: -5px;
 }
-.special-heading + p {
+
+.portfolio .card .card-text p {
+  font-size: 16px;
+  line-height: 1.6em;
+  color: #505050;
+}
+
+/* 
+
+end of portfolio section 
+
+/* 
+
+/*
+
+start about section
+
+*/
+.about {
+  padding: var(--section-padding) 0;
+  background-color: white;
+}
+.about .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+.about .about-content .about-img {
+  width: 250px;
+}
+.about .about-content .about-img-cont {
+  z-index: 1;
+  position: relative;
+}
+.about .about-content .about-img-cont::before {
+  top: -40px;
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 300px;
+  border-left: 80px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
+  z-index: -1;
+  right: -150px;
+}
+.about .about-content .about-img-cont::after {
+  content: "";
+  background-color: #ebeced;
+  position: absolute;
+  top: -30px;
+  right: 175px;
+  width: 100px;
+  height: calc(100% + 60px);
+  z-index: -1;
+}
+@media (max-width: 990px) {
+  .about .about-content .about-img-cont::after,
+  .about .about-content .about-img-cont::before {
+    display: none;
+  }
+  .about .about-content {
+    flex-direction: column;
+  }
+  .about .about-content p {
+    padding: 0 12px;
+  }
+}
+.about .about-content .about-text {
+  flex-basis: calc(100% - 500px);
+}
+
+.about .about-content .about-text p {
+  min-width: 200px;
+  max-width: 600px;
+}
+
+.about .about-content .about-text p:first-of-type {
+  text-align: justify;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+
+.about .about-content .about-text p:last-of-type {
+  line-height: 2;
+  color: #777;
+  text-align: justify;
+}
+
+.about .about-content .about-text hr {
+  width: 50%;
+  display: inline-block;
+  border-color: var(--main-color);
+}
+
+/* 
+
+end about section
+
+*/
+
+/*
+
+start of contact section 
+
+*/
+
+.contact {
+  padding: var(--section-padding) 0;
+  background-color: var(--secondary-color);
+}
+.contact .info {
+  padding-bottom: var(--section-padding);
   text-align: center;
-  color: rgb(120 120 120);
-  font-size: 20px;
-  margin-top: -28px;
-  margin-bottom: 100px;
 }
-@media (max-width: 767px) {
-  .special-heading {
-    font-size: 60px;
-  }
-  .special-heading + p {
-    font-size: 14px;
-    margin-top: -20px;
-    margin-bottom: 40px;
-  }
+
+.contact .info .label {
+  font-size: 35px;
+  font-weight: 800;
+  color: #2c4755;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
 }
-/* end special heading */
+.contact .info .link {
+  display: block;
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.contact .info .social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.contact .info .social i {
+  margin-left: 10px;
+  color: #2c4755;
+}
+/*
+
+end of contact section 
+
+*/
+.foot {
+  background-color: #2c4755;
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 18px;
+}
+.foot span {
+  font-weight: bold;
+  color: var(--main-color);
+}

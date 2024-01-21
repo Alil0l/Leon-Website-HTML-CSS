@@ -431,6 +431,17 @@ start of contact section
   margin-left: 10px;
   color: #2c4755;
 }
+@media (max-width: 390px) {
+  .contact .info .label {
+    font-size: 25px;
+  }
+  .contact .info .link {
+    font-size: 25px;
+  }
+  .contact .info .social {
+    font-size: 12px;
+  }
+}
 /*
 
 end of contact section 
